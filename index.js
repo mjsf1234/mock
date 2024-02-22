@@ -11,8 +11,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/validateIdcomAuthRedirect", (req, res) => {
+  console.log("hh  ", path.join(__dirname, "/public/success.html"));
   const htmlContent = fs.readFileSync(
-    path.resolve(__dirname, "success.html"),
+    path.join(__dirname, "/public/success.html"),
     "utf8"
   );
   res.send(htmlContent);
@@ -21,3 +22,4 @@ app.get("/validateIdcomAuthRedirect", (req, res) => {
 app.listen(PORT, () => {
   console.log(`server is running at ${PORT}`);
 });
+module.exports = app;
